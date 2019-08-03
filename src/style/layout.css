@@ -38,6 +38,13 @@ a {
   color: white;
   font-size: 60px;
   line-height: 1.2;
+  animation: HeadAnimation;
+  /* 使用 duration （持续时间）和 delay （延迟） */
+  animation-duration: 5s;
+  animation-delay: 0.1s;
+  /* （动画填充模式：向前）以确保动画结束后不会重置为初始数值 */
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .Head p {
@@ -45,6 +52,11 @@ a {
   line-height: 1.5;
   /* 方便控制透明度 */
   color: rgba(255,255,255, 0.8);
+  animation: HeadAnimation;
+  animation-duration: 5s;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* Head下链接标签的样式 */
@@ -57,6 +69,12 @@ a {
   padding: 9px 20px;
   border: 1px solid rgba(255,255,255, 0.25);
   border-radius: 20px;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.Head a:hover {
+  background: white;
+  color: black;
 }
 
 @media (max-width: 640px) {
@@ -70,5 +88,17 @@ a {
 
   .Hero p {
     font-size: 24px;
+  }
+}
+
+/* Head中文本的动画效果 */
+@keyframes HeadAnimation {
+  0% {
+      opacity: 0;
+      transform: translateY(20px)
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0px)
   }
 }
