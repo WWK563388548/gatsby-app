@@ -1,0 +1,67 @@
+.Header {
+    /* 将 position 属性设置为 fixed 来使 Header 浮动在页面顶部 */
+    position: fixed;
+    width: 100%;
+    padding: 50px 0;
+    /* 
+     使用 100 的 z-index，
+     确保它会始终保持在 fixed 或 absolute 定位的元素之上，
+     而不会被之后引入的新元素遮盖
+    */
+    z-index: 100;
+}
+
+.HeaderGroup {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    /* 使用grid */
+    display: grid;
+    /* 相当于grid-template-columns: auto auto auto auto auto; */
+    /* auto意为 Grid 网格将均匀分配可用间距 */
+    grid-template-columns: repeat(5, auto);
+    /* 元素在水平方向居中 */
+    align-items: center;
+    /* 元素在垂直方向居中 */
+    justify-items: center;
+}
+
+.Header a {
+    color: white;
+    font-weight: 700;
+}
+
+.Header button {
+    padding: 8px 20px;
+    font-size: 20px;
+    background: #56CCF2;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1.0);
+}
+
+.Header button:hover {
+    background: white;
+    color: black;
+    box-shadow: 0 10px 20px rgba(0,0,0, 0.25);
+    transform: translateY(-3px);
+}
+
+/* 根据屏幕宽度自适应布局 */
+/* 如果浏览器宽度小于 640px ，可以隐藏第三个链接 */
+@media (max-width: 640px) {
+    .Header {
+        padding: 15px 0;
+    }
+
+    .HeaderGroup {
+        grid-template-columns: repeat(4, auto);
+    }
+
+    .Header a:nth-child(4) {
+        display: none;
+    }
+}
