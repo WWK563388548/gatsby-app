@@ -9,10 +9,10 @@ const Header = ({ siteTitle }) => (
       <Link to="/">
         <img width="64" src={require("../images/logo3.png")} />
       </Link>
-      <Link to="/courses">Blogs</Link>
-      <Link to="/downloads">Projects</Link>
-      <Link to="/workshops">Resume</Link>
-      <Link to="/buy">
+      <Link to="/blogs">Blogs</Link>
+      <Link to="/projects">Projects</Link>
+      <Link to="/resume">Resume</Link>
+      <Link to="/donate">
         <button>Donate</button>
       </Link>
   </div>
