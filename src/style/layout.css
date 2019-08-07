@@ -22,6 +22,21 @@ a {
   background: url('../images/background4.jpg');
   background-size: cover;
   background-position: center;
+  position: relative;
+}
+
+.Head svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.Head .Logos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 40px;
+  margin: 100px 0;
+  justify-items: center;
 }
 
 /* 使 HeadGroup居中 */
@@ -78,16 +93,20 @@ a {
 }
 
 @media (max-width: 640px) {
-  .HeroGroup {
+  .HeadGroup {
     padding: 100px 20px;
   }
 
-  .Hero h1 {
+  .Head h1 {
     font-size: 40px;
   }
 
-  .Hero p {
+  .Head p {
     font-size: 24px;
+  }
+
+  .Head .Logos {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
